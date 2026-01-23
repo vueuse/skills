@@ -1,0 +1,21 @@
+{
+  "name": "vueuse-skills",
+  "type": "module",
+  "private": true,
+  "packageManager": "pnpm@10.28.1",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsx build.ts",
+    "prepare:vueuse": "cd ./vueuse && pnpm install && pnpm run update:full && pnpm -F @vueuse/metadata build",
+    "lint": "eslint"
+  },
+  "dependencies": {
+    "@vueuse/metadata": "link:vueuse/packages/metadata"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^7.2.0",
+    "@types/node": "^25.0.10",
+    "eslint": "^9.39.2",
+    "tsx": "^4.21.0"
+  }
+}
