@@ -9,7 +9,7 @@ Agent Skills for [VueUse](https://vueuse.org/) — a collection of essential Vue
 
 - 🪜 Progressive disclosure: send VueUse function overviews first, then load detailed usage and type declarations on demand
 - 💰 Minimal token usage: provide only necessary information to reduce token consumption
-- 📵 Offline-first design: no internet access required for AI agents
+- 📵 Offline-first design: works without internet access or additional agent permissions
 - ⚙️ Customizable policies: users can override function invocation rules in prompts or `AGENTS.md`
 - 💉 Reduced hallucinations: precise usage references help prevent invented APIs
 
