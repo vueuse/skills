@@ -26,7 +26,9 @@ This skill is a decision-and-implementation guide for VueUse composables in Vue.
 
 ## Functions
 
-All functions listed below are part of the [VueUse](https://vueuse.org/) library, which provides a collection of essential Vue Composition Utilities. Each section categorizes functions based on their functionality.
+All functions listed below are part of the [VueUse](https://vueuse.org/) library, each section categorizes functions based on their functionality.
+
+IMPORTANT: Each function entry includes a short `Description` and a detailed `Reference`. When using any function, always consult the corresponding document in `./references` for Usage details and Type Declarations.
 
 ### State
 
