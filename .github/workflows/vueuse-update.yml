@@ -1,0 +1,112 @@
+name: Track VueUse release
+
+on:
+  schedule:
+    - cron: '0 */12 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    concurrency:
+      group: vueuse-update
+      cancel-in-progress: false
+    steps:
+      - name: Checkout repo (with submodules)
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          fetch-depth: 0
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10.28.1
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+
+      - name: Determine latest VueUse tag
+        id: vueuse
+        run: |
+          git -C vueuse fetch --tags --force
+          latest_tag=$(cd vueuse && git tag -l 'v*' | grep -v '-' | sort -Vr | head -n 1)
+          if [ -z "$latest_tag" ]; then
+            echo "No VueUse tag found." >&2
+            exit 1
+          fi
+          echo "latest_tag=$latest_tag" >> "$GITHUB_OUTPUT"
+          echo "Latest VueUse tag: $latest_tag"
+
+      - name: Check for existing branch
+        id: branch
+        run: |
+          tag="${{ steps.vueuse.outputs.latest_tag }}"
+          branch="vueuse-$tag"
+          if git ls-remote --heads origin "$branch" | grep -q "$branch"; then
+            echo "exists=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "exists=false" >> "$GITHUB_OUTPUT"
+          fi
+          echo "branch=$branch" >> "$GITHUB_OUTPUT"
+
+      - name: Exit if branch exists
+        if: steps.branch.outputs.exists == 'true'
+        run: |
+          echo "Branch already exists: ${{ steps.branch.outputs.branch }}. Exiting."
+
+      - name: Create branch
+        if: steps.branch.outputs.exists == 'false'
+        run: |
+          git checkout -b "${{ steps.branch.outputs.branch }}"
+
+      - name: Checkout VueUse tag
+        if: steps.branch.outputs.exists == 'false'
+        run: |
+          cd vueuse
+          git checkout "${{ steps.vueuse.outputs.latest_tag }}"
+
+      - name: Install dependencies and build
+        if: steps.branch.outputs.exists == 'false'
+        run: |
+          pnpm i
+          pnpm prepare:vueuse
+          pnpm build
+
+      - name: Commit changes
+        if: steps.branch.outputs.exists == 'false'
+        id: commit
+        run: |
+          if [ -z "$(git status --porcelain)" ]; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "No changes to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "chore: update for vueuse ${{ steps.vueuse.outputs.latest_tag }}"
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+
+      - name: Push branch
+        if: steps.branch.outputs.exists == 'false' && steps.commit.outputs.changed == 'true'
+        run: |
+          git push -u origin "${{ steps.branch.outputs.branch }}"
+
+      - name: Create pull request
+        if: steps.branch.outputs.exists == 'false' && steps.commit.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh pr create \
+            --title "chore: update for vueuse ${{ steps.vueuse.outputs.latest_tag }}" \
+            --body "This PR updates the project for the latest vueuse release ${{ steps.vueuse.outputs.latest_tag }}." \
+            --base main \
+            --head "${{ steps.branch.outputs.branch }}"
