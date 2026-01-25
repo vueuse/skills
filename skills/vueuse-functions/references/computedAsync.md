@@ -95,9 +95,7 @@ const userInfo = computedAsync(
  * @param cancelCallback The provided callback is invoked when a re-evaluation of the computed value is triggered before the previous one finished
  */
 export type AsyncComputedOnCancel = (cancelCallback: Fn) => void
-export interface AsyncComputedOptions<
-  Lazy = boolean,
-> extends ConfigurableFlushSync {
+export interface AsyncComputedOptions<Lazy = boolean> {
   /**
    * Should value be evaluated lazily
    *
@@ -114,6 +112,15 @@ export interface AsyncComputedOptions<
    * @default true
    */
   shallow?: boolean
+  /**
+   * The flush option allows for greater control over the timing of a history point, default to `pre`
+   *
+   * Possible values: `pre`, `post`, `sync`
+   *
+   * It works in the same way as the flush option in watch and watch effect in vue reactivity
+   * @default 'sync'
+   */
+  flush?: WatchOptionFlush
   /**
    * Callback when error is caught.
    */

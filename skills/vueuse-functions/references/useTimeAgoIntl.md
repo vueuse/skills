@@ -62,9 +62,8 @@ export interface FormatTimeAgoIntlOptions {
    */
   units?: TimeAgoUnit[]
 }
-export interface UseTimeAgoIntlOptions<
-  Controls extends boolean,
-> extends FormatTimeAgoIntlOptions {
+export interface UseTimeAgoIntlOptions<Controls extends boolean>
+  extends FormatTimeAgoIntlOptions {
   /**
    * Expose more controls and the raw `parts` result.
    *

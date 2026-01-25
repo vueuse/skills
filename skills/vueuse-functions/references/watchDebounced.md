@@ -39,7 +39,8 @@ watchWithFilter(
 
 ```ts
 export interface WatchDebouncedOptions<Immediate>
-  extends WatchOptions<Immediate>, DebounceFilterOptions {
+  extends WatchOptions<Immediate>,
+    DebounceFilterOptions {
   debounce?: MaybeRefOrGetter<number>
 }
 export declare function watchDebounced<

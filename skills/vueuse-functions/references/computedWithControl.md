@@ -77,9 +77,11 @@ export interface ComputedWithControlRefExtra {
   trigger: () => void
 }
 export interface ComputedRefWithControl<T>
-  extends ComputedRef<T>, ComputedWithControlRefExtra {}
+  extends ComputedRef<T>,
+    ComputedWithControlRefExtra {}
 export interface WritableComputedRefWithControl<T>
-  extends WritableComputedRef<T>, ComputedWithControlRefExtra {}
+  extends WritableComputedRef<T>,
+    ComputedWithControlRefExtra {}
 export type ComputedWithControlRef<T = any> =
   | ComputedRefWithControl<T>
   | WritableComputedRefWithControl<T>

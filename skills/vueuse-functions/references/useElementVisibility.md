@@ -90,9 +90,8 @@ function onElementVisibility(state) {
 
 ```ts
 export interface UseElementVisibilityOptions
-  extends
-    ConfigurableWindow,
-    Pick<UseIntersectionObserverOptions, "rootMargin" | "threshold"> {
+  extends ConfigurableWindow,
+    Pick<UseIntersectionObserverOptions, "threshold"> {
   /**
    * Initial value.
    *
@@ -100,9 +99,13 @@ export interface UseElementVisibilityOptions
    */
   initialValue?: boolean
   /**
+   * @see https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver/rootMargin
+   */
+  rootMargin?: MaybeRefOrGetter<string>
+  /**
    * The element that is used as the viewport for checking visibility of the target.
    */
-  scrollTarget?: UseIntersectionObserverOptions["root"]
+  scrollTarget?: MaybeRefOrGetter<HTMLElement | undefined | null>
   /**
    * Stop tracking when element visibility changes for the first time
    *

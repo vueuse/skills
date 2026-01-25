@@ -139,21 +139,7 @@ export interface UseSortableReturn {
   ) => void) &
     (<K extends keyof Sortable.Options>(name: K) => Sortable.Options[K])
 }
-export interface UseSortableOptions extends Options, ConfigurableDocument {
-  /**
-   * Watch the element reference for changes and automatically reinitialize Sortable
-   * when the element changes.
-   *
-   * When `false` (default), Sortable is only initialized once on mount.
-   * You must manually call `start()` if the element reference changes.
-   *
-   * When `true`, automatically watches the element reference and reinitializes
-   * Sortable whenever it changes (e.g., conditional rendering with v-if).
-   *
-   * @default false
-   */
-  watchElement?: boolean
-}
+export type UseSortableOptions = Options & ConfigurableDocument
 export declare function useSortable<T>(
   selector: string,
   list: MaybeRef<T[]>,

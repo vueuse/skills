@@ -61,8 +61,8 @@ export interface UseAsyncStateReturnBase<
   isReady: Ref<boolean>
   isLoading: Ref<boolean>
   error: Ref<unknown>
-  execute: (delay?: number, ...args: Params) => Promise<Data | undefined>
-  executeImmediate: (...args: Params) => Promise<Data | undefined>
+  execute: (delay?: number, ...args: Params) => Promise<Data>
+  executeImmediate: (...args: Params) => Promise<Data>
 }
 export type UseAsyncStateReturn<
   Data,

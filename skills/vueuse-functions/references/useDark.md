@@ -103,10 +103,8 @@ const isDark = useDark({
 ## Type Declarations
 
 ```ts
-export interface UseDarkOptions extends Omit<
-  UseColorModeOptions<BasicColorSchema>,
-  "modes" | "onChanged"
-> {
+export interface UseDarkOptions
+  extends Omit<UseColorModeOptions<BasicColorSchema>, "modes" | "onChanged"> {
   /**
    * Value applying to the target element when isDark=true
    *

@@ -18,18 +18,16 @@ const { element } = useElementByPoint({ x, y })
 ## Type Declarations
 
 ```ts
-export interface UseElementByPointOptions<
-  Multiple extends boolean = false,
-> extends ConfigurableDocument {
+export interface UseElementByPointOptions<Multiple extends boolean = false>
+  extends ConfigurableDocument {
   x: MaybeRefOrGetter<number>
   y: MaybeRefOrGetter<number>
   multiple?: MaybeRefOrGetter<Multiple>
   immediate?: boolean
   interval?: "requestAnimationFrame" | number
 }
-export interface UseElementByPointReturn<
-  Multiple extends boolean = false,
-> extends Pausable {
+export interface UseElementByPointReturn<Multiple extends boolean = false>
+  extends Pausable {
   isSupported: ComputedRef<boolean>
   element: ShallowRef<
     Multiple extends true ? HTMLElement[] : HTMLElement | null

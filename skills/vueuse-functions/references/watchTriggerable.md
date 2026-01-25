@@ -61,9 +61,8 @@ await trigger() // logs (after 500 ms): The value is "1"
 ## Type Declarations
 
 ```ts
-export interface WatchTriggerableReturn<
-  FnReturnT = void,
-> extends WatchIgnorableReturn {
+export interface WatchTriggerableReturn<FnReturnT = void>
+  extends WatchIgnorableReturn {
   /** Execute `WatchCallback` immediately */
   trigger: () => FnReturnT
 }

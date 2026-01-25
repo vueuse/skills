@@ -129,7 +129,8 @@ export interface UseBluetoothRequestDeviceOptions {
   optionalServices?: BluetoothServiceUUID[] | undefined
 }
 export interface UseBluetoothOptions
-  extends UseBluetoothRequestDeviceOptions, ConfigurableNavigator {
+  extends UseBluetoothRequestDeviceOptions,
+    ConfigurableNavigator {
   /**
    *
    * A boolean value indicating that the requesting script can accept all Bluetooth

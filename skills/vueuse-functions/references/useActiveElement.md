@@ -35,7 +35,8 @@ watch(activeElement, (el) => {
 
 ```ts
 export interface UseActiveElementOptions
-  extends ConfigurableWindow, ConfigurableDocumentOrShadowRoot {
+  extends ConfigurableWindow,
+    ConfigurableDocumentOrShadowRoot {
   /**
    * Search active element deeply inside shadow dom
    *

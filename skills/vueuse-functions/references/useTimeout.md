@@ -33,9 +33,8 @@ console.log(ready.value) // true
 ## Type Declarations
 
 ```ts
-export interface UseTimeoutOptions<
-  Controls extends boolean,
-> extends UseTimeoutFnOptions {
+export interface UseTimeoutOptions<Controls extends boolean>
+  extends UseTimeoutFnOptions {
   /**
    * Expose more controls
    *

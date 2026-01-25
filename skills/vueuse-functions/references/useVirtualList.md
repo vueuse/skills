@@ -118,7 +118,8 @@ To scroll to a specific element, the component exposes `scrollTo(index: number) 
 
 ```ts
 type UseVirtualListItemSize = number | ((index: number) => number)
-export interface UseHorizontalVirtualListOptions extends UseVirtualListOptionsBase {
+export interface UseHorizontalVirtualListOptions
+  extends UseVirtualListOptionsBase {
   /**
    * item width, accept a pixel value or a function that returns the width
    *
@@ -126,7 +127,8 @@ export interface UseHorizontalVirtualListOptions extends UseVirtualListOptionsBa
    */
   itemWidth: UseVirtualListItemSize
 }
-export interface UseVerticalVirtualListOptions extends UseVirtualListOptionsBase {
+export interface UseVerticalVirtualListOptions
+  extends UseVirtualListOptionsBase {
   /**
    * item height, accept a pixel value or a function that returns the height
    *

@@ -38,9 +38,8 @@ watchWithFilter(
 ## Type Declarations
 
 ```ts
-export interface WatchThrottledOptions<
-  Immediate,
-> extends WatchOptions<Immediate> {
+export interface WatchThrottledOptions<Immediate>
+  extends WatchOptions<Immediate> {
   throttle?: MaybeRefOrGetter<number>
   trailing?: boolean
   leading?: boolean

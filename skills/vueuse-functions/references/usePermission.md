@@ -39,9 +39,8 @@ export type GeneralPermissionDescriptor =
   | {
       name: DescriptorNamePolyfill
     }
-export interface UsePermissionOptions<
-  Controls extends boolean,
-> extends ConfigurableNavigator {
+export interface UsePermissionOptions<Controls extends boolean>
+  extends ConfigurableNavigator {
   /**
    * Expose more controls
    *

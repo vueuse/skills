@@ -122,9 +122,8 @@ const count = useExtractedObservable(
 ## Type Declarations
 
 ```ts
-export interface UseExtractedObservableOptions<
-  E,
-> extends UseObservableOptions<E> {
+export interface UseExtractedObservableOptions<E>
+  extends UseObservableOptions<E> {
   onComplete?: () => void
 }
 export declare function useExtractedObservable<

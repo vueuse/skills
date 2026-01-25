@@ -133,7 +133,9 @@ export interface StorageEventLike {
   newValue: StorageEvent["newValue"]
 }
 export interface UseStorageOptions<T>
-  extends ConfigurableEventFilter, ConfigurableWindow, ConfigurableFlush {
+  extends ConfigurableEventFilter,
+    ConfigurableWindow,
+    ConfigurableFlush {
   /**
    * Watch for deep changes
    *

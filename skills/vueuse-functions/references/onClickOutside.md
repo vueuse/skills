@@ -130,9 +130,8 @@ const onClickOutsideHandler = [
 ## Type Declarations
 
 ```ts
-export interface OnClickOutsideOptions<
-  Controls extends boolean = false,
-> extends ConfigurableWindow {
+export interface OnClickOutsideOptions<Controls extends boolean = false>
+  extends ConfigurableWindow {
   /**
    * List of elements that should not trigger the event,
    * provided as Refs or CSS Selectors.

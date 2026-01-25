@@ -25,9 +25,8 @@ watchAtMost(
 ## Type Declarations
 
 ```ts
-export interface WatchAtMostOptions<
-  Immediate,
-> extends WatchWithFilterOptions<Immediate> {
+export interface WatchAtMostOptions<Immediate>
+  extends WatchWithFilterOptions<Immediate> {
   count: MaybeRefOrGetter<number>
 }
 export interface WatchAtMostReturn {

@@ -49,7 +49,8 @@ watch(idle, (idleValue) => {
 
 ```ts
 export interface UseIdleOptions
-  extends ConfigurableWindow, ConfigurableEventFilter {
+  extends ConfigurableWindow,
+    ConfigurableEventFilter {
   /**
    * Event names that listen to for detected user activity
    *

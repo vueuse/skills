@@ -204,9 +204,8 @@ export interface UseAxiosOptionsBase<T = any> {
    */
   onFinish?: () => void
 }
-export interface UseAxiosOptionsWithInitialData<
-  T,
-> extends UseAxiosOptionsBase<T> {
+export interface UseAxiosOptionsWithInitialData<T>
+  extends UseAxiosOptionsBase<T> {
   /**
    * Initial data
    */
@@ -219,8 +218,8 @@ export declare function useAxios<
   T = any,
   R = AxiosResponse<T>,
   D = any,
-  O extends UseAxiosOptionsWithInitialData<T> =
-    UseAxiosOptionsWithInitialData<T>,
+  O extends
+    UseAxiosOptionsWithInitialData<T> = UseAxiosOptionsWithInitialData<T>,
 >(
   url: string,
   config?: AxiosRequestConfig<D>,
@@ -230,8 +229,8 @@ export declare function useAxios<
   T = any,
   R = AxiosResponse<T>,
   D = any,
-  O extends UseAxiosOptionsWithInitialData<T> =
-    UseAxiosOptionsWithInitialData<T>,
+  O extends
+    UseAxiosOptionsWithInitialData<T> = UseAxiosOptionsWithInitialData<T>,
 >(
   url: string,
   instance?: AxiosInstance,
@@ -241,8 +240,8 @@ export declare function useAxios<
   T = any,
   R = AxiosResponse<T>,
   D = any,
-  O extends UseAxiosOptionsWithInitialData<T> =
-    UseAxiosOptionsWithInitialData<T>,
+  O extends
+    UseAxiosOptionsWithInitialData<T> = UseAxiosOptionsWithInitialData<T>,
 >(
   url: string,
   config: AxiosRequestConfig<D>,

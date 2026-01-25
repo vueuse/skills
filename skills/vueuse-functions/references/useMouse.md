@@ -62,7 +62,8 @@ export type UseMouseEventExtractor = (
   event: MouseEvent | Touch,
 ) => [x: number, y: number] | null | undefined
 export interface UseMouseOptions
-  extends ConfigurableWindow, ConfigurableEventFilter {
+  extends ConfigurableWindow,
+    ConfigurableEventFilter {
   /**
    * Mouse position based by page, client, screen, or relative to previous position
    *

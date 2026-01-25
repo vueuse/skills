@@ -75,7 +75,8 @@ useAnimate(el, keyframes, 1000)
 
 ```ts
 export interface UseAnimateOptions
-  extends KeyframeAnimationOptions, ConfigurableWindow {
+  extends KeyframeAnimationOptions,
+    ConfigurableWindow {
   /**
    * Will automatically run play when `useAnimate` is used
    *

@@ -46,8 +46,7 @@ onElementRemoval(btnRef, () => ++removedCount.value)
 
 ```ts
 export interface OnElementRemovalOptions
-  extends
-    ConfigurableWindow,
+  extends ConfigurableWindow,
     ConfigurableDocumentOrShadowRoot,
     WatchOptionsBase {}
 /**
