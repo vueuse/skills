@@ -19,11 +19,11 @@ Agent Skills for [VueUse](https://vueuse.org/) — a collection of essential Vue
 npx skills add vueuse/skills
 ```
 
-## Claude Code Marketplace
+### Claude Code Marketplace
 
 An alternative for Claude Code users:
 
-```
+```bash
 # Add marketplace
 /plugin marketplace add vueuse/skills
 
