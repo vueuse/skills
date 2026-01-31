@@ -125,8 +125,7 @@ In other frameworks or plain Vue, you can wrap your usage component with a `<Cli
 
 ```ts
 export interface UseGamepadOptions
-  extends ConfigurableWindow,
-    ConfigurableNavigator {}
+  extends ConfigurableWindow, ConfigurableNavigator {}
 /**
  * Maps a standard standard gamepad to an Xbox 360 Controller.
  */

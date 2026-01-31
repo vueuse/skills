@@ -26,8 +26,7 @@ watchWithFilter(
 
 ```ts
 export interface WatchWithFilterOptions<Immediate>
-  extends WatchOptions<Immediate>,
-    ConfigurableEventFilter {}
+  extends WatchOptions<Immediate>, ConfigurableEventFilter {}
 export declare function watchWithFilter<
   T extends Readonly<MultiWatchSources>,
   Immediate extends Readonly<boolean> = false,

@@ -38,7 +38,8 @@ stop()
 ## Type Declarations
 
 ```ts
-export interface UseVibrateOptions extends ConfigurableNavigator {
+export interface UseVibrateOptions
+  extends ConfigurableNavigator, ConfigurableScheduler {
   /**
    *
    * Vibration Pattern
@@ -52,16 +53,24 @@ export interface UseVibrateOptions extends ConfigurableNavigator {
    * @default []
    *
    */
-  pattern?: MaybeRefOrGetter<number[] | number>
+  pattern?: MaybeRefOrGetter<Arrayable<number>>
   /**
    * Interval to run a persistent vibration, in ms
    *
    * Pass `0` to disable
    *
+   * @deprecated Please use `scheduler` option instead
    * @default 0
    *
    */
-  interval?: number
+  interval: number
+}
+export interface UseVibrateReturn {
+  isSupported: ComputedRef<boolean>
+  pattern: MaybeRefOrGetter<Arrayable<number>>
+  intervalControls?: Pausable
+  vibrate: (pattern?: Arrayable<number>) => void
+  stop: () => void
 }
 /**
  * Reactive vibrate
@@ -72,12 +81,7 @@ export interface UseVibrateOptions extends ConfigurableNavigator {
  *
  * @__NO_SIDE_EFFECTS__
  */
-export declare function useVibrate(options?: UseVibrateOptions): {
-  isSupported: ComputedRef<boolean>
-  pattern: MaybeRefOrGetter<number | number[]>
-  intervalControls: Pausable | undefined
-  vibrate: (pattern?: number | number[]) => void
-  stop: () => void
-}
-export type UseVibrateReturn = ReturnType<typeof useVibrate>
+export declare function useVibrate(
+  options?: UseVibrateOptions,
+): UseVibrateReturn
 ```

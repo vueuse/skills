@@ -140,8 +140,7 @@ export interface WebNotificationOptions {
   vibrate?: number[]
 }
 export interface UseWebNotificationOptions
-  extends ConfigurableWindow,
-    WebNotificationOptions {
+  extends ConfigurableWindow, WebNotificationOptions {
   /**
    * Request for permissions onMounted if it's not granted.
    *

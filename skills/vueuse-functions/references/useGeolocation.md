@@ -41,8 +41,7 @@ const { coords, locatedAt, error, resume, pause } = useGeolocation()
 
 ```ts
 export interface UseGeolocationOptions
-  extends Partial<PositionOptions>,
-    ConfigurableNavigator {
+  extends Partial<PositionOptions>, ConfigurableNavigator {
   immediate?: boolean
 }
 /**

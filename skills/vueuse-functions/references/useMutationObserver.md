@@ -35,8 +35,7 @@ useMutationObserver(el, (mutations) => {
 
 ```ts
 export interface UseMutationObserverOptions
-  extends MutationObserverInit,
-    ConfigurableWindow {}
+  extends MutationObserverInit, ConfigurableWindow {}
 /**
  * Watch for changes being made to the DOM tree.
  *
