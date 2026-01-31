@@ -32,8 +32,7 @@ const { x, y } = useWindowScroll()
 
 ```ts
 export interface UseWindowScrollOptions
-  extends ConfigurableWindow,
-    UseScrollOptions {}
+  extends ConfigurableWindow, UseScrollOptions {}
 /**
  * Reactive window scroll.
  *

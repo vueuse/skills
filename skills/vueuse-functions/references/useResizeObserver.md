@@ -85,8 +85,7 @@ export type ResizeObserverCallback = (
   observer: ResizeObserver,
 ) => void
 export interface UseResizeObserverOptions
-  extends ResizeObserverOptions,
-    ConfigurableWindow {}
+  extends ResizeObserverOptions, ConfigurableWindow {}
 /**
  * Reports changes to the dimensions of an Element's content or the border-box
  *

@@ -48,8 +48,9 @@ const { content, copy, copied, isSupported } = useClipboardItems({ source })
 ## Type Declarations
 
 ```ts
-export interface UseClipboardItemsOptions<Source>
-  extends ConfigurableNavigator {
+export interface UseClipboardItemsOptions<
+  Source,
+> extends ConfigurableNavigator {
   /**
    * Enabled reading for clipboard
    *

@@ -38,7 +38,7 @@ const visibility = useDocumentVisibility()
  */
 export declare function useDocumentVisibility(
   options?: ConfigurableDocument,
-): ShallowRef<string, string>
+): ShallowRef<DocumentVisibilityState, DocumentVisibilityState>
 export type UseDocumentVisibilityReturn = ReturnType<
   typeof useDocumentVisibility
 >

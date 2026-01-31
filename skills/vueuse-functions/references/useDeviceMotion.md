@@ -48,8 +48,7 @@ You can find [more information about the state on the MDN](https://developer.moz
 
 ```ts
 export interface DeviceMotionOptions
-  extends ConfigurableWindow,
-    ConfigurableEventFilter {
+  extends ConfigurableWindow, ConfigurableEventFilter {
   /**
    * Request for permissions immediately if it's not granted,
    * otherwise label and deviceIds could be empty

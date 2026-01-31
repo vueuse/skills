@@ -39,8 +39,7 @@ console.log(cached.value) // { value: 43, extra: 1 }
 
 ```ts
 export interface UseCachedOptions<D extends boolean = true>
-  extends ConfigurableDeepRefs<D>,
-    WatchOptions {}
+  extends ConfigurableDeepRefs<D>, WatchOptions {}
 export declare function useCached<T, D extends boolean = true>(
   refValue: Ref<T>,
   comparator?: (a: T, b: T) => boolean,
