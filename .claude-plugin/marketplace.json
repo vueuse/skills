@@ -1,5 +1,9 @@
 {
   "name": "vueuse-skills",
+  "owner": {
+    "name": "VueUse",
+    "url": "https://github.com/vueuse"
+  },
   "plugins": [
     {
       "name": "vueuse-functions",
