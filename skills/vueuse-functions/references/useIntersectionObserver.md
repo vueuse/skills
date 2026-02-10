@@ -95,8 +95,7 @@ export interface UseIntersectionObserverOptions extends ConfigurableWindow {
    */
   threshold?: number | number[]
 }
-export interface UseIntersectionObserverReturn extends Pausable {
-  isSupported: ComputedRef<boolean>
+export interface UseIntersectionObserverReturn extends Supportable, Pausable {
   stop: () => void
 }
 /**

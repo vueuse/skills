@@ -63,6 +63,11 @@ export interface UseNowOptions<
    */
   interval?: "requestAnimationFrame" | number
 }
+export type UseNowReturn<Controls extends boolean> = Controls extends true
+  ? {
+      now: Ref<Date>
+    } & Pausable
+  : Ref<Date>
 /**
  * Reactive current Date instance.
  *
@@ -75,5 +80,4 @@ export declare function useNow(options?: UseNowOptions<false>): Ref<Date>
 export declare function useNow(options: UseNowOptions<true>): {
   now: Ref<Date>
 } & Pausable
-export type UseNowReturn = ReturnType<typeof useNow>
 ```
