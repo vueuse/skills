@@ -218,10 +218,12 @@ export interface OnLongPressModifiers {
   capture?: boolean
   self?: boolean
 }
+export type OnLongPressReturn = () => void
+/** @deprecated use {@link OnLongPressReturn} instead */
+export type UseOnLongPressReturn = OnLongPressReturn
 export declare function onLongPress(
   target: MaybeElementRef,
   handler: (evt: PointerEvent) => void,
   options?: OnLongPressOptions,
-): () => void
-export type UseOnLongPressReturn = ReturnType<typeof onLongPress>
+): OnLongPressReturn
 ```
