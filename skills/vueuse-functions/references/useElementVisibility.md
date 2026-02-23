@@ -110,6 +110,7 @@ export interface UseElementVisibilityOptions
    */
   once?: boolean
 }
+export type UseElementVisibilityReturn = ShallowRef<boolean>
 /**
  * Tracks the visibility of an element within the viewport.
  *
@@ -118,6 +119,5 @@ export interface UseElementVisibilityOptions
 export declare function useElementVisibility(
   element: MaybeComputedElementRef,
   options?: UseElementVisibilityOptions,
-): ShallowRef<boolean, boolean>
-export type UseElementVisibilityReturn = ReturnType<typeof useElementVisibility>
+): UseElementVisibilityReturn
 ```
