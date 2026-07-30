@@ -47,5 +47,6 @@
     "scss",
     "pcss",
     "postcss"
-  ]
+  ],
+  "sarif-viewer.connectToGithubCodeScanning": "off"
 }
