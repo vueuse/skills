@@ -15,7 +15,7 @@
   "devDependencies": {
     "@antfu/eslint-config": "^7.2.0",
     "@types/node": "^25.0.10",
-    "eslint": "^9.39.2",
+    "eslint": "^10.0.0",
     "tsx": "^4.21.0"
   }
 }
