@@ -13,9 +13,9 @@
     "@vueuse/metadata": "link:vueuse/packages/metadata"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^7.2.0",
-    "@types/node": "^25.0.10",
-    "eslint": "^9.39.2",
-    "tsx": "^4.21.0"
+    "@antfu/eslint-config": "^7.7.3",
+    "@types/node": "^25.9.5",
+    "eslint": "^10.8.0",
+    "tsx": "^4.23.1"
   }
 }
