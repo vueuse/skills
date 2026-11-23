@@ -118,6 +118,9 @@ export interface UseTextareaAutosizeReturn {
   input: Ref<string>
   triggerResize: () => void
 }
+/**
+ * @deprecated Use CSS `field-sizing: content` instead when supported by target browsers.
+ */
 export declare function useTextareaAutosize(
   options?: UseTextareaAutosizeOptions,
 ): UseTextareaAutosizeReturn

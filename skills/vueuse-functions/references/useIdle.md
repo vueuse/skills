@@ -31,6 +31,7 @@ watch(idle, (idleValue) => {
     inc()
     console.log(`Triggered ${count.value} times`)
     reset() // restarts the idle timer. Does not change lastActive value
+    // reset(true) // also sets lastActive to now
   }
 })
 ```
@@ -72,7 +73,13 @@ export interface UseIdleOptions
 export interface UseIdleReturn extends Stoppable {
   idle: ShallowRef<boolean>
   lastActive: ShallowRef<number>
-  reset: () => void
+  /**
+   * Restart the idle timer.
+   *
+   * @param resetLastActive also set `lastActive` to now, as user activity does
+   * @default false
+   */
+  reset: (resetLastActive?: boolean) => void
 }
 /**
  * Tracks whether the user is being inactive.

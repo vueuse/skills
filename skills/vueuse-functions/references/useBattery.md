@@ -54,18 +54,42 @@ Our applications normally are not empathetic to battery level, we can make a few
 ## Type Declarations
 
 ```ts
+/**
+ * Many of the jsdoc definitions here are modified version of the
+ * documentation from MDN(https://developer.mozilla.org/en-US/docs/Web/API/BatteryManager/charging)
+ */
 export interface UseBatteryOptions extends ConfigurableNavigator {}
 export interface UseBatteryReturn extends Supportable {
-  charging: ShallowRef<boolean>
-  chargingTime: ShallowRef<number>
-  dischargingTime: ShallowRef<number>
-  level: ShallowRef<number>
+  /**
+   * A Boolean value indicating whether the battery is currently being charged.
+   *
+   * [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/BatteryManager/charging)
+   */
+  charging: Readonly<ShallowRef<boolean>>
+  /**
+   * A number representing the remaining time in seconds until the battery is fully charged, or 0 if the battery is already fully charged.
+   *
+   * [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/BatteryManager/chargingTime)
+   */
+  chargingTime: Readonly<ShallowRef<number>>
+  /**
+   * A number representing the remaining time in seconds until the battery is completely discharged and the system suspends.
+   *
+   * [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/BatteryManager/dischargingTime)
+   */
+  dischargingTime: Readonly<ShallowRef<number>>
+  /**
+   * A number representing the system's battery charge level scaled to a value between 0.0 and 1.0.
+   *
+   * [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/BatteryManager/level)
+   */
+  level: Readonly<ShallowRef<number>>
 }
 export interface BatteryManager extends EventTarget {
-  charging: boolean
-  chargingTime: number
-  dischargingTime: number
-  level: number
+  readonly charging: boolean
+  readonly chargingTime: number
+  readonly dischargingTime: number
+  readonly level: number
 }
 /**
  * Reactive Battery Status API.
