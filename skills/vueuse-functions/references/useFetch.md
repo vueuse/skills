@@ -410,6 +410,10 @@ export interface UseFetchReturn<T> {
     payload?: MaybeRefOrGetter<unknown>,
     type?: string,
   ) => UseFetchReturn<T> & PromiseLike<UseFetchReturn<T>>
+  query: (
+    payload?: MaybeRefOrGetter<unknown>,
+    type?: string,
+  ) => UseFetchReturn<T> & PromiseLike<UseFetchReturn<T>>
   json: <JSON = any>() => UseFetchReturn<JSON> &
     PromiseLike<UseFetchReturn<JSON>>
   text: () => UseFetchReturn<string> & PromiseLike<UseFetchReturn<string>>

@@ -16,8 +16,8 @@ const { remaining, start, stop, pause, resume } = useCountdown(countdownSeconds,
   onComplete() {
 
   },
-  onTick() {
-
+  onTick(remaining) {
+    console.log(remaining)
   }
 })
 ```
@@ -55,9 +55,9 @@ export interface UseCountdownOptions extends ConfigurableScheduler {
    */
   onComplete?: () => void
   /**
-   * Callback function called on each tick of the countdown.
+   * Callback function called on each tick with the updated remaining value.
    */
-  onTick?: () => void
+  onTick?: (remaining: number) => void
 }
 export interface UseCountdownReturn extends Pausable {
   /**

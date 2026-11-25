@@ -103,7 +103,7 @@ export declare function useElementOverflow(
 ): {
   isXOverflowed: Readonly<ShallowRef<boolean, boolean>>
   isYOverflowed: Readonly<ShallowRef<boolean, boolean>>
-  stop: typeof stop
+  stop: () => void
   update: () => void
 }
 export type UseElementOverflowReturn = ReturnType<typeof useElementOverflow>
